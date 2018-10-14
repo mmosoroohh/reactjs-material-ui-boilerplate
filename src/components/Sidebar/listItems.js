@@ -9,49 +9,47 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
-  <Router>
-    <div>
-      <Link to="/charts">
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        </ListItem>
-      </Link>
-      <Link to="/tables">
-        <ListItem button>
-          <ListItemIcon>
-            <ShoppingCartIcon />
-          </ListItemIcon>
-          <ListItemText primary="Orders" />
-        </ListItem>
-      </Link>
-      <Link to="/">
-        <ListItem button>
-          <ListItemIcon>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Customers" />
-        </ListItem>
-      </Link>
+  <div>
+    <Link to="/charts">
       <ListItem button>
         <ListItemIcon>
-          <BarChartIcon />
+          <DashboardIcon />
         </ListItemIcon>
-        <ListItemText primary="Reports" />
+        <ListItemText primary="Dashboard" />
       </ListItem>
+    </Link>
+    <Link to="/tables">
       <ListItem button>
         <ListItemIcon>
-          <LayersIcon />
+          <ShoppingCartIcon />
         </ListItemIcon>
-        <ListItemText primary="Integrations" />
+        <ListItemText primary="Orders" />
       </ListItem>
-    </div>
-  </Router>
+    </Link>
+    <Link to="/">
+      <ListItem button>
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Customers" />
+      </ListItem>
+    </Link>
+    <ListItem button>
+      <ListItemIcon>
+        <BarChartIcon />
+      </ListItemIcon>
+      <ListItemText primary="Reports" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Integrations" />
+    </ListItem>
+  </div>
 );
 
 export const secondaryListItems = (

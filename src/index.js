@@ -6,9 +6,6 @@ import { createLogger } from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import indexRoutes from './routes/index';
-// import App from './App';
-// import App from './dashboard';
-// import App from './layouts/dashboard';
 import * as serviceWorker from './serviceWorker';
 import allReducers from './reducer';
 

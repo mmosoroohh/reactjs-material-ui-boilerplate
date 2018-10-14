@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  Redirect,
+  Link,
+  BrowserRouter as Router
+} from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -12,6 +18,7 @@ import { compose } from 'recompose';
 // import SimpleTable from './SimpleTable';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
+import Table from '../../components/Tables/SimpleTable';
 import dashboardRoutes from '../../routes/dashboard';
 import { addTodo } from '../../actions';
 
@@ -19,10 +26,13 @@ const drawerWidth = 240;
 
 const switchRoutes = (
   <Switch>
-    {dashboardRoutes.map((route, key) => {
-      if (route.redirect)
-        return <Redirect from={route.path} to={route.to} key={key} />;
-      return <Route path={route.path} component={route.component} key={key} />;
+    {dashboardRoutes.map((prop, key) => {
+      console.log(prop)
+      if (prop.redirect)
+        return <Redirect from={prop.path} to={prop.to} key={key} />;
+      return (
+        <Route exact path={prop.path} component={prop.component} key={key} />
+      );
     })}
   </Switch>
 );
@@ -143,6 +153,7 @@ class Dashboard extends React.Component {
             open={this.state.open}
             handleDrawerClose={this.handleDrawerClose}
             handleDrawerOpen={this.handleDrawerOpen}
+            routes={dashboardRoutes}
           />
           <main className={classes.content} style={customStyle.main}>
             <div className={classes.appBarSpacer} />

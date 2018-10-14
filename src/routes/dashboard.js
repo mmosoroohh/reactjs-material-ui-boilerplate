@@ -5,11 +5,15 @@ const dashboardRoutes = [
   {
     path: '/charts',
     name: 'Simple Charts',
+    icon: 'face',
+    color: 'primary',
     component: SimpleLineChart
   },
   {
     path: '/tables',
     name: 'Simple Tables',
+    icon: 'dashboard',
+    color: 'secondary',
     component: SimpleTable
   }
 ];
